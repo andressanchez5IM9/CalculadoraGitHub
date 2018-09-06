@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Calculadora con Servlets</title>
     <style>
         form {
   width: 100%;
@@ -19,8 +20,8 @@ input[type=textfield] {
     border: 1px solid silver;
     border-radius: 1px;
     text-align: left;
-    color: #333;
-    background: #ccc;
+    color: crimson;
+    background: crimson;
 }
 input[type=button], input[type=submit], input[type=reset] {
     background-color: #4CAF50;
@@ -37,15 +38,15 @@ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
   background-color: #333;
 }
     </style>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <LINK REL="stylesheet" TYPE="text/css" HREF="estiloscalculadora.css">
-  <title>Calculadora con Servlets</title>
+
 </head>
 <body>
-    <form name="calculator" method="POST" action='ServletCalc'>
+    
+    <form name="calculator" method="POST" action='Servidor'>
         <h3>Calculadora</h3>
         <input type=text name=ans>
+        <input type=hidden name=ans1>
         <br>
         <br>
         <input type="button" value="1" onClick="document.calculator.ans.value+='1'">
@@ -76,8 +77,8 @@ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
         <input type="button" value="arcsin" onClick="document.calculator.ans.value+='Math.asin('">
        <input type="button" value="arccos" onClick="document.calculator.ans.value+='Math.acos('">
         <input type="button" value="arctan" onClick="document.calculator.ans.value+='Math.atan('">
-        <input type="submit" value="=">
-        <!--<input type="button" value="=" onClick="document.calculator.ans.value=eval(document.calculator.ans.value)">-->
+        <!--<input type=submit value="=">-->
+        <input type="submit" value="=" onClick="document.calculator.ans1.value=eval(document.calculator.ans.value)">
     </form>
 </body>
 </html>
