@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora con Servlets</title>
+    <style>
+        form {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border: solid 1px #c2c2c2;
+  padding-bottom: 10px;
+  margin: auto;
+  background: #fafafa;
+}
+input[type=textfield] {
+    width: 75%;
+    padding: 16px 32px;
+    font-size: 16px;
+    margin: 8px 0;
+    border: 1px solid silver;
+    border-radius: 1px;
+    text-align: left;
+    color: crimson;
+    background: crimson;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    font-size: 16px;
+    min-width: 21%;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+  background-color: #333;
+}
+    </style>
+  <LINK REL="stylesheet" TYPE="text/css" HREF="estiloscalculadora.css">
+
+</head>
+<body>
+    
+    <form name="calculator" method="POST" action='Servidor'>
+        <h3>Calculadora</h3>
+        <input type=text name=ans>
+        <input type=hidden name=ans1>
+        <br>
+        <br>
+        <input type="button" value="1" onClick="document.calculator.ans.value+='1'">
+        <input type="button" value="2" onClick="document.calculator.ans.value+='2'">
+        <input type="button" value="3" onClick="document.calculator.ans.value+='3'">
+        <input type="button" value="+" onClick="document.calculator.ans.value+='+'">
+        <br>
+        <input type="button" value="4" onClick="document.calculator.ans.value+='4'">
+        <input type="button" value="5" onClick="document.calculator.ans.value+='5'">
+        <input type="button" value="6" onClick="document.calculator.ans.value+='6'">
+        <input type="button" value="-" onClick="document.calculator.ans.value+='-'">
+        <br>
+        <input type="button" value="7" onClick="document.calculator.ans.value+='7'">
+        <input type="button" value="8" onClick="document.calculator.ans.value+='8'">
+        <input type="button" value="9" onClick="document.calculator.ans.value+='9'">
+        <input type="button" value="*" onClick="document.calculator.ans.value+='*'">
+        <br>
+        <input type="button" value="0" onClick="document.calculator.ans.value+='0'">
+        <input type="reset" value="c">
+        <input type="button" value="/" onClick="document.calculator.ans.value+='/'">
+        <input type="button" value="(" onClick="document.calculator.ans.value+='('">
+        <br>
+        <input type="button" value="sin" onClick="document.calculator.ans.value+='Math.sin('">
+        <input type="button" value="cos" onClick="document.calculator.ans.value+='Math.cos('">
+        <input type="button" value="tan" onClick="document.calculator.ans.value+='Math.tan('">
+        <input type="button" value=")" onClick="document.calculator.ans.value+=')'">
+        <br>
+        <input type="button" value="arcsin" onClick="document.calculator.ans.value+='Math.asin('">
+       <input type="button" value="arccos" onClick="document.calculator.ans.value+='Math.acos('">
+        <input type="button" value="arctan" onClick="document.calculator.ans.value+='Math.atan('">
+        <!--<input type=submit value="=">-->
+        <input type="submit" value="=" onClick="document.calculator.ans1.value=eval(document.calculator.ans.value)">
+    </form>
+</body>
+</html>
